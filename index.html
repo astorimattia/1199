@@ -3,26 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link href="https://fonts.cdnfonts.com/css/sinkin-sans" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/sinkin-sans?styles=20185,20186,20187,20188" rel="stylesheet">
+    <title>1199 Capital</title>
     <style>
+        @font-face {
+            font-family: 'Sinkin Sans 900';
+            src: url('public/SinkinSans/SinkinSans-900XBlack.woff2') format('woff2');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
         body {
             margin: 0;
             padding: 0;
             background-color: #000000;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            font-family: 'Sinkin Sans 900', sans-serif;
+            overflow: hidden;
         }
 
         .logo {
             display: grid;
             grid-template-rows: repeat(2, 120px);
             grid-template-columns: repeat(2, 120px);
-            font-family: 'Sinkin Sans', Arial, sans-serif;
-            font-weight: 900;
+            font-family: 'Sinkin Sans 900';
             color: white;
             gap: 16px;
         }
@@ -40,8 +48,7 @@
             bottom: 40px;
             color: white;
             text-decoration: none;
-            font-family: 'Sinkin Sans', Arial, sans-serif;
-            font-weight: 900;
+            font-family: 'Sinkin Sans 900';
             font-size: 22px;
             opacity: 0.8;
             transition: opacity 0.2s, border-color 0.2s;
@@ -56,22 +63,21 @@
             border-color: rgba(255, 255, 255, 1);
         }
 
-        @media (max-width: 768px) {
-            .invest-cta {
-                font-size: 18px;
-                padding: 10px 24px;
-                bottom: 32px;
-            }
-            
-            .number-box {
-                font-size: 80px;
-            }
-            
+        /* Media query for mobile devices */
+        @media (max-width: 600px) {
             .logo {
-                grid-template-rows: repeat(2, 100px);
-                grid-template-columns: repeat(2, 100px);
-                gap: 12px;
+                grid-template-rows: repeat(2, 80px);
+                grid-template-columns: repeat(2, 80px);
                 margin-top: -80px;
+            }
+
+            .number-box {
+                font-size: 70px;
+            }
+
+            .invest-cta {
+                font-size: 19px;
+                padding: 8px 24px;
             }
         }
     </style>
@@ -83,6 +89,6 @@
         <div class="number-box">9</div>
         <div class="number-box">9</div>
     </div>
-    <a href="https://tally.so/r/mYJBKd" class="invest-cta">INVEST</a>
+    <a href="#" class="invest-cta">INVEST</a>
 </body>
 </html>

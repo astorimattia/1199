@@ -13,25 +13,37 @@
             font-display: swap;
         }
 
-        body {
+        * {
             margin: 0;
             padding: 0;
-            background-color: #000000;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Sinkin Sans 900', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .section {
             height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            font-family: 'Sinkin Sans 900', sans-serif;
-            overflow: hidden;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .hero {
+            background-color: #000;
+            color: white;
+            flex-direction: column;
+            position: relative;
         }
 
         .logo {
             display: grid;
             grid-template-rows: repeat(2, 120px);
             grid-template-columns: repeat(2, 120px);
-            font-family: 'Sinkin Sans 900';
-            color: white;
             gap: 16px;
         }
 
@@ -48,7 +60,6 @@
             bottom: 40px;
             color: white;
             text-decoration: none;
-            font-family: 'Sinkin Sans 900';
             font-size: 22px;
             opacity: 0.8;
             transition: opacity 0.2s, border-color 0.2s;
@@ -63,12 +74,59 @@
             border-color: rgba(255, 255, 255, 1);
         }
 
-        /* Media query for mobile devices */
-        @media (max-width: 600px) {
+        .logos-section {
+            background-color: white;
+            flex-direction: column;
+        }
+
+        .logos-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 80%;
+            max-width: 1000px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            padding: 10px;
+        }
+
+        .logo-item img {
+            max-height: 80px;
+            width: auto;
+            max-width: 150px;
+            object-fit: contain;
+        }
+
+        .logo-item img[alt="xAI Logo"] {
+            max-height: 50px;
+        } 
+
+        .logo-item img[alt="SSI Logo"] {
+            max-width: 180px;
+        }
+        
+        
+
+        /* Scroll Effect */
+        html {
+            scroll-snap-type: y mandatory;
+        }
+
+        .section {
+            scroll-snap-align: start;
+        }
+
+        /* Responsive */
+          @media (max-width: 768px) {
             .logo {
                 grid-template-rows: repeat(2, 80px);
                 grid-template-columns: repeat(2, 80px);
-                margin-top: -80px;
             }
 
             .number-box {
@@ -79,16 +137,45 @@
                 font-size: 19px;
                 padding: 8px 24px;
             }
-        }
+
+            .logos-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .logo-item {
+                height: 80px;
+            }
+
+            .logo-item img {
+                max-height: 80px;
+                max-width: 150px;
+            }
+}
     </style>
 </head>
 <body>
-    <div class="logo">
-        <div class="number-box">1</div>
-        <div class="number-box">1</div>
-        <div class="number-box">9</div>
-        <div class="number-box">9</div>
+    <div class="section hero">
+        <div class="logo">
+            <div class="number-box">1</div>
+            <div class="number-box">1</div>
+            <div class="number-box">9</div>
+            <div class="number-box">9</div>
+        </div>
+        <a href="https://tally.so/r/mYJBKd" class="invest-cta">INVEST</a>
     </div>
-    <a href="https://tally.so/r/mYJBKd" class="invest-cta">INVEST</a>
+
+    <div class="section logos-section">
+        <div class="logos-container">
+            <div class="logo-item"><img src="/public/logo/anduril.webp" alt="Anduril Logo"></div>
+            <div class="logo-item"><img src="/public/logo/openai.webp" alt="OpenAI Logo"></div>
+            <div class="logo-item"><img src="/public/logo/xai.webp" alt="xAI Logo"></div>
+            <div class="logo-item"><img src="/public/logo/spacex.webp" alt="SpaceX Logo"></div>
+            <div class="logo-item"><img src="/public/logo/boom.webp" alt="Boom Logo"></div>
+            <div class="logo-item"><img src="/public/logo/ssi.webp" alt="SSI Logo"></div>
+            <div class="logo-item"><img src="/public/logo/databricks.webp" alt="Databricks Logo"></div>
+            <div class="logo-item"><img src="/public/logo/varda.webp" alt="Varda Logo"></div>
+        </div>
+    </div>
 </body>
 </html>

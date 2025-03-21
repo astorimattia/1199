@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1199 Capital</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     @font-face {
       font-family: 'Sinkin Sans 900';
@@ -124,26 +125,62 @@
       background-color: #000;
       color: white;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
       font-size: 20px;
       font-weight: bold;
+      position: relative;
+    }
+
+    .email-top {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+
+    .email-bottom {
+      position: absolute;
+      bottom: 40px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .location {
+      color: white;
+      opacity: 0.8;
+      letter-spacing: 0.2em;
+      font-size: 22px;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      padding: 12px 32px;
+      border-radius: 4px;
+      transition: opacity 0.2s, border-color 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .location-content {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;  /* Keeps icon and text together */
     }
 
     .email-cta {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    opacity: 0.8;
-    transition: opacity 0.2s, border-color 0.2s;
-    letter-spacing: 0.2em;
-    padding: 12px 32px;
-    border-radius: 4px;
-  }
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      opacity: 0.8;
+      transition: opacity 0.2s, border-color 0.2s;
+      letter-spacing: 0.2em;
+      padding: 12px 32px;
+      border-radius: 4px;
+    }
 
-  .email-cta:hover {
-    opacity: 1;
-  }
+    .email-cta:hover {
+      opacity: 1;
+    }
 
     /* Scroll Effect */
     html {
@@ -180,9 +217,9 @@
       }
 
       .logo-item {
-        height: 100px;
+        height: 120px;
         flex: 1 1 45%;
-        max-width: 180px;
+        max-width: 250px;
       }
 
       .logo-item img {
@@ -193,9 +230,28 @@
         font-size: 12px;
       }
       .email-cta {
-      font-size: 12px;
-      padding: 8px 24px;
+        font-size: 12px;
+        padding: 8px 24px;
+      }
+      .email-top, .email-bottom {
+        padding-bottom: 20px;
+      }
+      .location {
+        font-size: 19px;
+        padding: 8px 24px;
+      }
     }
+
+    .location i {
+      margin-right: 12px;
+      font-size: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .location i {
+        margin-right: 10px;
+        font-size: 16px;
+      }
     }
   </style>
 </head>
@@ -314,7 +370,7 @@
         }
 
         .logo-item {
-          height: 120px;
+          height: 100px;
           font-size: 20px;
         }
       }
@@ -351,7 +407,12 @@
   </div>
 
 <div class="section email-section">
-  <a href="mailto:mattia@1199capital.com" class="email-cta">mattia@1199capital.com</a>
+  <div class="email-top">
+    <a href="mailto:mattia@1199capital.com" class="email-cta">mattia@1199capital.com</a>
+  </div>
+  <div class="email-bottom">
+    <span class="location"><span class="location-content"><i class="fas fa-location-dot"></i>SF, CA</span></span>
+  </div>
 </div>
 
 

@@ -165,6 +165,10 @@
       display: inline-flex;
       align-items: center;
       white-space: nowrap;  /* Keeps icon and text together */
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
     }
 
     .email-cta {
@@ -253,6 +257,14 @@
         font-size: 16px;
       }
     }
+
+    .logo-text {
+      color: #ffffff;
+      user-select: none;
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE10+/Edge */
+    }
   </style>
 </head>
 
@@ -284,50 +296,25 @@
 
   <div class="section interactive-logos-section">
     <div class="interactive-logos-container">
-      <div class="logo-item" onclick="expandLogo(this, 'sub-logos-1')"><span class="logo-text">YC S23</span></div>
-      <div class="logo-item" onclick="expandLogo(this, 'sub-logos-2')"><span class="logo-text">YC W24</span></div>
-      <div class="logo-item" onclick="expandLogo(this, 'sub-logos-3')"><span class="logo-text">YC S24</span></div>
-      <div class="logo-item" onclick="expandLogo(this, 'sub-logos-4')"><span class="logo-text">YC F24</span></div>
-      <div class="logo-item" onclick="expandLogo(this, 'sub-logos-5')"><span class="logo-text">YC W25</span></div>
-      <div class="logo-item" onclick="expandLogo(this, 'sub-logos-6')"><span class="logo-text">______</span></div>
+      <div class="logo-item">
+        <a href="https://www.ycombinator.com/companies?batch=S23"><span class="logo-text">YC S23</span></a>
+      </div>
+      <div class="logo-item">
+        <a href="https://www.ycombinator.com/companies?batch=W24"><span class="logo-text">YC W24</span></a>
+      </div>
+      <div class="logo-item">
+        <a href="https://www.ycombinator.com/companies?batch=S24"><span class="logo-text">YC S24</span></a>
+      </div>
+      <div class="logo-item">
+        <a href="https://www.ycombinator.com/companies?batch=F24"><span class="logo-text">YC F24</span></a>
+      </div>
+      <div class="logo-item">
+        <a href="https://www.ycombinator.com/companies?batch=W25"><span class="logo-text">YC W25</span></a>
+      </div>
+      <div class="logo-item">
+        <span class="logo-text">______</span>
+      </div>
     </div>
-
-    <!-- <div class="sub-logos" id="ycs23">
-      <img src="/public/logo/sublogo1-1.webp" alt="Sub Logo 1-1">
-      <img src="/public/logo/sublogo1-2.webp" alt="Sub Logo 1-2">
-    </div>
-    <div class="sub-logos" id="ycw24">
-      <img src="/public/logo/sublogo2-1.webp" alt="Sub Logo 2-1">
-      <img src="/public/logo/sublogo2-2.webp" alt="Sub Logo 2-2">
-    </div>
-     <div class="sub-logos" id="ycw24">
-      <img src="/public/logo/sublogo2-1.webp" alt="Sub Logo 2-1">
-      <img src="/public/logo/sublogo2-2.webp" alt="Sub Logo 2-2">
-    </div> -->
-
-    <!-- <script>
-      function expandLogo(selectedLogo, subLogosId) {
-        document.querySelectorAll('.logo-item').forEach(logo => {
-          if (logo !== selectedLogo) {
-            logo.style.opacity = '0';
-          }
-        });
-        selectedLogo.classList.add('center-logo');
-        document.getElementById(subLogosId).classList.add('show-sub-logos');
-      }
-
-      document.addEventListener('click', function (event) {
-        if (!event.target.closest('.logo-item') && !event.target.closest('.sub-logos')) {
-          document.querySelectorAll('.logo-item').forEach(logo => {
-            logo.style.opacity = '1';
-            logo.classList.remove('center-logo');
-          });
-          document.querySelectorAll('.sub-logos').forEach(sub => {
-            sub.classList.remove('show-sub-logos');
-          });
-        }
-      });
-    </script> -->
 
     <style>
       .interactive-logos-section {
@@ -352,14 +339,31 @@
         align-items: center;
         height: 150px;
         padding: 10px;
-        transition: opacity 0.5s ease;
         font-size: 24px;
         font-weight: bold;
         color: #ffffff;
       }
 
+      .logo-item a {
+        text-decoration: none;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        height: 60%;
+      }
+
+      .logo-item a:hover {
+        opacity: 0.8;
+      }
+
       .logo-text {
         color: #ffffff;
+        user-select: none;
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
       }
 
       @media (max-width: 768px) {
@@ -373,35 +377,6 @@
           height: 100px;
           font-size: 20px;
         }
-      }
-
-      .center-logo {
-        position: absolute;
-        top: 25%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(1.5);
-        z-index: 2;
-        transition: transform 0.5s ease;
-      }
-
-      .sub-logos {
-        display: none;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        flex-direction: row;
-        gap: 20px;
-      }
-
-      .sub-logos img {
-        max-height: 60px;
-        cursor: pointer;
-      }
-
-      .show-sub-logos {
-        display: flex;
       }
     </style>
   </div>

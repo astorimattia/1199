@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1199 Capital</title>
+  <link rel="icon" type="image/x-icon" href="/public/favicon.webp">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    @font-face {
+      font-family: 'Sinkin Sans 900';
+      src: url('public/SinkinSans/SinkinSans-900XBlack.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Sinkin Sans Light';
+      src: url('public/SinkinSans/SinkinSans-300Light.woff2') format('woff2');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Sinkin Sans 900', sans-serif;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.8s ease-in-out;
+    }
+
+    .hero {
+      background-color: #000;
+      color: white;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .logo {
+      display: grid;
+      grid-template-rows: repeat(2, 120px);
+      grid-template-columns: repeat(2, 120px);
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .number-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 100px;
+      line-height: 1;
+    }
+
+    .invest-cta {
+      position: absolute;
+      bottom: 40px;
+      color: white;
+      text-decoration: none;
+      font-size: 22px;
+      opacity: 0.8;
+      transition: opacity 0.2s, border-color 0.2s;
+      letter-spacing: 0.2em;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      padding: 12px 32px;
+      border-radius: 4px;
+    }
+
+    .invest-cta:hover {
+      opacity: 1;
+      border-color: rgba(255, 255, 255, 1);
+    }
+
+    .logos-section {
+      background-color: white;
+      flex-direction: column;
+    }
+
+    .logos-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 50%;
+      max-width: 1000px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 250px;
+      padding: 10px;
+      flex: 1 1 calc(50% - 20px);
+    }
+
+    .logo-item img {
+      max-height: 90%;
+      width: auto;
+      max-width: 250px;
+      object-fit: contain;
+    }
+
+    .logo-item img[alt="xAI Logo"] {
+      max-height: 100%;
+    }
+
+    .logo-item img[alt="SSI Logo"] {
+      max-width: 250px;
+    }
+
+    .email-section {
+      background-color: #000;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      font-size: 20px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .email-top {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+
+    .email-bottom {
+      position: absolute;
+      bottom: 40px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .location {
+      color: white;
+      opacity: 0.8;
+      letter-spacing: 0.2em;
+      font-size: 22px;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      padding: 12px 32px;
+      border-radius: 4px;
+      transition: opacity 0.2s, border-color 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .location-content {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;  /* Keeps icon and text together */
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+
+    .email-cta {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      opacity: 0.8;
+      transition: opacity 0.2s, border-color 0.2s;
+      letter-spacing: 0.2em;
+      padding: 12px 32px;
+      border-radius: 4px;
+    }
+
+    .email-cta:hover {
+      opacity: 1;
+    }
+
+    /* Scroll Effect */
+    html {
+      scroll-snap-type: y mandatory;
+    }
+
+    .section {
+      scroll-snap-align: start;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .logo {
+        grid-template-rows: repeat(2, 80px);
+        grid-template-columns: repeat(2, 80px);
+        margin-top: -10vh;
+        gap: 10px;
+      }
+
+      .number-box {
+        font-size: 70px;
+      }
+
+      .invest-cta {
+        font-size: 19px;
+        padding: 8px 24px;
+        bottom: 100px;
+      }
+
+      .logos-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 80%;
+      }
+
+      .logo-item {
+        height: 120px;
+        flex: 1 1 45%;
+        max-width: 250px;
+      }
+
+      .logo-item img {
+        max-height: 60px; /* Reduced max height for better fit */
+        max-width: 180px;
+      }
+      .email-section {
+        font-size: 12px;
+      }
+      .email-cta {
+        font-size: 12px;
+        padding: 8px 24px;
+      }
+      .email-top, .email-bottom {
+        padding-bottom: 20px;
+      }
+      .location {
+        font-size: 19px;
+        padding: 8px 24px;
+      }
+    }
+
+    .location i {
+      margin-right: 12px;
+      font-size: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .location i {
+        margin-right: 10px;
+        font-size: 16px;
+      }
+    }
+
+    .logo-text {
+      color: #ffffff;
+      user-select: none;
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE10+/Edge */
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <div class="section hero">
+    <div class="logo">
+      <div class="number-box">1</div>
+      <div class="number-box">1</div>
+      <div class="number-box">9</div>
+      <div class="number-box">9</div>
+    </div>
+    <a href="https://1199capital.com" class="invest-cta">INVEST</a>
+    <!-- <a href="https://apply.1199capital.com" class="invest-cta">INVEST</a> -->
+  </div>
+
+  <div class="section logos-section">
+    <div class="logos-container">
+      <div class="logo-item"><a href="https://www.anduril.com"><img src="/public/logo/anduril.webp" alt="Anduril Logo"></a></div>
+      <div class="logo-item"><a href="https://www.openai.com"><img src="/public/logo/openai.webp" alt="OpenAI Logo"></a></div>
+      <div class="logo-item"><a href="https://www.x.ai"><img src="/public/logo/xai.webp" alt="xAI Logo"></a></div>
+      <div class="logo-item"><a href="https://www.spacex.com"><img src="/public/logo/spacex.webp" alt="SpaceX Logo"></a></div>
+      <div class="logo-item"><a href="https://www.boom.aero"><img src="/public/logo/boom.webp" alt="Boom Logo"></a></div>
+      <div class="logo-item"><a href="https://www.ssi.com"><img src="/public/logo/ssi.webp" alt="SSI Logo"></a></div>
+      <div class="logo-item"><a href="https://www.databricks.com"><img src="/public/logo/databricks.webp" alt="Databricks Logo"></a></div>
+      <div class="logo-item"><a href="https://www.varda.com"><img src="/public/logo/varda.webp" alt="Varda Logo"></a></div>
+      <div class="logo-item"><a href="https://www.perplexity.ai"><img src="/public/logo/perplexity.webp" alt="Perplexity Logo"></a></div>
+      <div class="logo-item"><a href="https://www.elevenlabs.io"><img src="/public/logo/elevenlabs.webp" alt="Elevenlabs Logo"></a></div>
+    </div>
+  </div>
+
+  <div class="section interactive-logos-section">
+    <div class="interactive-logos-container">
+      <div class="logo-item">
+        <a href="https://www.ycombinator.com/companies?batch=S23"><span class="logo-text">YC S23</span></a>
+      </div>
+      <div class="logo-item">
+        <a href="https://www.ycombinator.com/companies?batch=W24"><span class="logo-text">YC W24</span></a>
+      </div>
+      <div class="logo-item">
+        <a href="https://www.ycombinator.com/companies?batch=S24"><span class="logo-text">YC S24</span></a>
+      </div>
+      <div class="logo-item">
+        <a href="https://www.ycombinator.com/companies?batch=F24"><span class="logo-text">YC F24</span></a>
+      </div>
+      <div class="logo-item">
+        <a href="https://www.ycombinator.com/companies?batch=W25"><span class="logo-text">YC W25</span></a>
+      </div>
+      <div class="logo-item">
+        <span class="logo-text">______</span>
+      </div>
+    </div>
+
+    <style>
+      .interactive-logos-section {
+        background-color: #ff4000;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .interactive-logos-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 50%;
+        max-width: 1000px;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .logo-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        padding: 10px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #ffffff;
+      }
+
+      .logo-item a {
+        text-decoration: none;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        height: 60%;
+      }
+
+      .logo-item a:hover {
+        opacity: 0.8;
+      }
+
+      .logo-text {
+        color: #ffffff;
+        user-select: none;
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+      }
+
+      @media (max-width: 768px) {
+        .interactive-logos-container {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+          width: 80%;
+        }
+
+        .logo-item {
+          height: 100px;
+          font-size: 20px;
+        }
+      }
+    </style>
+  </div>
+
+<div class="section email-section">
+  <div class="email-top">
+    <a href="mailto:mattia@1199capital.com" class="email-cta">mattia@1199capital.com</a>
+  </div>
+  <div class="email-bottom">
+    <span class="location"><span class="location-content"><i class="fas fa-location-dot"></i>SF, CA</span></span>
+  </div>
+</div>
+
+
+</body>
+
+</html>

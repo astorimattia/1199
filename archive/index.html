@@ -64,6 +64,19 @@
       }
     }
 
+    /* Inactive Overlay */
+    .inactive-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      backdrop-filter: blur(1px);
+      background-color: rgba(121, 121, 121, 0.16);
+      pointer-events: none;
+      z-index: 999;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -320,6 +333,7 @@
 </head>
 
 <body>
+  <div class="inactive-overlay"></div>
   <div class="fixed-banner">
     <div class="banner-title">1199 Capital is inactive and is no longer accepting investments</div>
   </div>

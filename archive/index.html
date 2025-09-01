@@ -77,6 +77,21 @@
       z-index: 999;
     }
 
+    /* Disabled Links - Keep hover effects but prevent navigation */
+    .disabled-link {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .disabled-link:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+
+    .disabled-link:active {
+      transform: scale(0.98);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -345,41 +360,41 @@
       <div class="number-box">9</div>
       <div class="number-box">9</div>
     </div>
-    <a href="https://1199capital.com" class="invest-cta">INVEST</a>
+    <a href="javascript:void(0)" class="invest-cta disabled-link">INVEST</a>
     <!-- <a href="https://apply.1199capital.com" class="invest-cta">INVEST</a> -->
   </div>
 
   <div class="section logos-section">
     <div class="logos-container">
-      <div class="logo-item"><a href="https://www.anduril.com"><img src="/public/logo/anduril.webp" alt="Anduril Logo"></a></div>
-      <div class="logo-item"><a href="https://www.openai.com"><img src="/public/logo/openai.webp" alt="OpenAI Logo"></a></div>
-      <div class="logo-item"><a href="https://www.x.ai"><img src="/public/logo/xai.webp" alt="xAI Logo"></a></div>
-      <div class="logo-item"><a href="https://www.spacex.com"><img src="/public/logo/spacex.webp" alt="SpaceX Logo"></a></div>
-      <div class="logo-item"><a href="https://www.boom.aero"><img src="/public/logo/boom.webp" alt="Boom Logo"></a></div>
-      <div class="logo-item"><a href="https://www.ssi.com"><img src="/public/logo/ssi.webp" alt="SSI Logo"></a></div>
-      <div class="logo-item"><a href="https://www.databricks.com"><img src="/public/logo/databricks.webp" alt="Databricks Logo"></a></div>
-      <div class="logo-item"><a href="https://www.varda.com"><img src="/public/logo/varda.webp" alt="Varda Logo"></a></div>
-      <div class="logo-item"><a href="https://www.perplexity.ai"><img src="/public/logo/perplexity.webp" alt="Perplexity Logo"></a></div>
-      <div class="logo-item"><a href="https://www.elevenlabs.io"><img src="/public/logo/elevenlabs.webp" alt="Elevenlabs Logo"></a></div>
+      <div class="logo-item"><a href="javascript:void(0)" class="disabled-link"><img src="/public/logo/anduril.webp" alt="Anduril Logo"></a></div>
+      <div class="logo-item"><a href="javascript:void(0)" class="disabled-link"><img src="/public/logo/openai.webp" alt="OpenAI Logo"></a></div>
+      <div class="logo-item"><a href="javascript:void(0)" class="disabled-link"><img src="/public/logo/xai.webp" alt="xAI Logo"></a></div>
+      <div class="logo-item"><a href="javascript:void(0)" class="disabled-link"><img src="/public/logo/spacex.webp" alt="SpaceX Logo"></a></div>
+      <div class="logo-item"><a href="javascript:void(0)" class="disabled-link"><img src="/public/logo/boom.webp" alt="Boom Logo"></a></div>
+      <div class="logo-item"><a href="javascript:void(0)" class="disabled-link"><img src="/public/logo/ssi.webp" alt="SSI Logo"></a></div>
+      <div class="logo-item"><a href="javascript:void(0)" class="disabled-link"><img src="/public/logo/databricks.webp" alt="Databricks Logo"></a></div>
+      <div class="logo-item"><a href="javascript:void(0)" class="disabled-link"><img src="/public/logo/varda.webp" alt="Varda Logo"></a></div>
+      <div class="logo-item"><a href="javascript:void(0)" class="disabled-link"><img src="/public/logo/perplexity.webp" alt="Perplexity Logo"></a></div>
+      <div class="logo-item"><a href="javascript:void(0)" class="disabled-link"><img src="/public/logo/elevenlabs.webp" alt="Elevenlabs Logo"></a></div>
     </div>
   </div>
 
   <div class="section interactive-logos-section">
     <div class="interactive-logos-container">
       <div class="logo-item">
-        <a href="https://www.ycombinator.com/companies?batch=S23"><span class="logo-text">YC S23</span></a>
+        <a href="javascript:void(0)" class="disabled-link"><span class="logo-text">YC S23</span></a>
       </div>
       <div class="logo-item">
-        <a href="https://www.ycombinator.com/companies?batch=W24"><span class="logo-text">YC W24</span></a>
+        <a href="javascript:void(0)" class="disabled-link"><span class="logo-text">YC W24</span></a>
       </div>
       <div class="logo-item">
-        <a href="https://www.ycombinator.com/companies?batch=S24"><span class="logo-text">YC S24</span></a>
+        <a href="javascript:void(0)" class="disabled-link"><span class="logo-text">YC S24</span></a>
       </div>
       <div class="logo-item">
-        <a href="https://www.ycombinator.com/companies?batch=F24"><span class="logo-text">YC F24</span></a>
+        <a href="javascript:void(0)" class="disabled-link"><span class="logo-text">YC F24</span></a>
       </div>
       <div class="logo-item">
-        <a href="https://www.ycombinator.com/companies?batch=W25"><span class="logo-text">YC W25</span></a>
+        <a href="javascript:void(0)" class="disabled-link"><span class="logo-text">YC W25</span></a>
       </div>
       <div class="logo-item">
         <span class="logo-text">______</span>
@@ -422,10 +437,12 @@
         align-items: center;
         width: 60%;
         height: 60%;
+        transition: all 0.3s ease;
       }
 
       .logo-item a:hover {
         opacity: 0.8;
+        transform: scale(1.05);
       }
 
       .logo-text {
@@ -453,7 +470,7 @@
 
 <div class="section email-section">
   <div class="email-top">
-    <a href="mailto:[redacted]@1199capital.com" class="email-cta">[redacted]@1199capital.com</a>
+    <a href="javascript:void(0)" class="email-cta disabled-link">[redacted]@1199capital.com</a>
   </div>
   <div class="email-bottom">
     <span class="location"><span class="location-content"><i class="fas fa-location-dot"></i>SF, CA</span></span>
@@ -461,6 +478,20 @@
 </div>
 
 
+  <script>
+    // Prevent navigation on all disabled links while keeping hover effects
+    document.addEventListener('DOMContentLoaded', function() {
+      const disabledLinks = document.querySelectorAll('.disabled-link');
+      
+      disabledLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

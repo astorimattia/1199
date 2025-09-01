@@ -10,7 +10,7 @@
   <style>
     @font-face {
       font-family: 'Sinkin Sans 900';
-      src: url('public/SinkinSans/SinkinSans-900XBlack.woff2') format('woff2');
+      src: url('/public/SinkinSans/SinkinSans-900XBlack.woff2') format('woff2');
       font-weight: 900;
       font-style: normal;
       font-display: swap;
@@ -18,10 +18,50 @@
 
     @font-face {
       font-family: 'Sinkin Sans Light';
-      src: url('public/SinkinSans/SinkinSans-300Light.woff2') format('woff2');
+      src: url('/public/SinkinSans/SinkinSans-300Light.woff2') format('woff2');
       font-weight: 300;
       font-style: normal;
       font-display: swap;
+    }
+
+    /* Fixed Banner */
+    .fixed-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #666666;
+      color: white;
+      text-align: center;
+      padding: 12px 20px;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .banner-title {
+      font-size: 16px;
+      font-weight: 300;
+      font-family: 'Sinkin Sans Light', sans-serif;
+    }
+
+    .banner-subtitle {
+      font-size: 11px;
+      font-family: 'Sinkin Sans Light', sans-serif;
+      font-weight: 300;
+      opacity: 1;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      .fixed-banner {
+        padding: 10px 16px;
+      }
+      .banner-title {
+        font-size: 14px;
+      }
+      .banner-subtitle {
+        font-size: 10px;
+      }
     }
 
     * {
@@ -280,6 +320,10 @@
 </head>
 
 <body>
+  <div class="fixed-banner">
+    <div class="banner-title">1199 Capital is inactive and is no longer accepting investments</div>
+  </div>
+  
   <div class="section hero">
     <div class="logo">
       <div class="number-box">1</div>
@@ -395,7 +439,7 @@
 
 <div class="section email-section">
   <div class="email-top">
-    <a href="mailto:mattia@1199capital.com" class="email-cta">mattia@1199capital.com</a>
+    <a href="mailto:[redacted]@1199capital.com" class="email-cta">[redacted]@1199capital.com</a>
   </div>
   <div class="email-bottom">
     <span class="location"><span class="location-content"><i class="fas fa-location-dot"></i>SF, CA</span></span>

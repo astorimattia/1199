@@ -1,0 +1,12 @@
+{
+  "name": "1199-archive",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "http-server . -o -p 3001",
+    "start": "http-server . -o -p 3001"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+} 
